@@ -103,8 +103,10 @@ public class Fragment1 extends Fragment {
     private void updateDetails(){
         StudentS s=StudentS.get(getActivity());
         List<contactitem> c=s.getStudents();
-        contactitem c1=s.getContact(10);
-        if(adapter==null){
+        //contactitem c1=s.getContact(10);
+        adapter=new contactadapter(c);
+        recyclerView.setAdapter(adapter);
+        /*if(adapter==null){
             Toast.makeText(getContext(), "null adapter", Toast.LENGTH_SHORT).show();
             adapter=new contactadapter(c);
             recyclerView.setAdapter(adapter);
@@ -113,7 +115,7 @@ public class Fragment1 extends Fragment {
             Toast.makeText(getContext(), "notnull adapter !"+c1.getName(), Toast.LENGTH_SHORT).show();
             adapter=new contactadapter(c);
             adapter.notifyDataSetChanged();
-        }
+        }*/
 
     }
 }

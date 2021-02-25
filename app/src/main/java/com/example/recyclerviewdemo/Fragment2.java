@@ -93,7 +93,7 @@ public class Fragment2 extends Fragment {
                 c.setName(name);
                 c.setdept(dept);
                 c.setEmail(email);
-                Toast.makeText(getContext(), "New name is !"+name, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Data saved!!New name is !"+name, Toast.LENGTH_SHORT).show();
             }
         });
         /*
@@ -130,8 +130,6 @@ public class Fragment2 extends Fragment {
         t1.setText("Student name: "+c.getName());
         t2.setText("Student dept: "+c.getDept());
         t3.setText("Student email: "+c.getEmail());
-        c.setName("shiva");
-
 
     }
     public void save(View v){
