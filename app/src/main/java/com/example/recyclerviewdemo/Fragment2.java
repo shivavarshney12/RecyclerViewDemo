@@ -73,60 +73,68 @@ public class Fragment2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        Bundle bundle=this.getArguments();
-        int pos=bundle.getInt("position");
-        pos++;
-        Toast.makeText(getContext(), "New Position is !"+ pos, Toast.LENGTH_SHORT).show();
-        StudentS s=StudentS.get(getActivity());
-        c= s.getContact(pos);
+
+
         //contactitem currentcontact=conlist.get(pos);
         View v=inflater.inflate(R.layout.fragment_2, container, false);
-        Toast.makeText(getContext(), "New data is !"+ c.getName(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), "New data is !"+ c.getName(), Toast.LENGTH_SHORT).show();
 
         submit = (Button) v.findViewById(R.id.button);
-        editText1= (EditText) v.findViewById(R.id.editText);
-        editText2= (EditText) v.findViewById(R.id.editText2);
-        editText3= (EditText) v.findViewById(R.id.editText3);
-        t1= (TextView) v.findViewById(R.id.textview1);
-        t2= (TextView) v.findViewById(R.id.textview2);
-        t3= (TextView) v.findViewById(R.id.textview3);
-        editText1.setHint(c.getName());
-        editText2.setHint(c.getDept());
-        editText3.setHint(c.getEmail());
-        name=c.getName();
-        c.setName("shivaV");
-        t1.setText(name.toString());
-        t2.setText(c.getDept());
-        t3.setText(c.getEmail());
-        t1.setVisibility(View.VISIBLE);
-        t2.setVisibility(View.VISIBLE);
-        t3.setVisibility(View.VISIBLE);
-
-        Toast.makeText(getContext(), "New data before click is !"+ c.getName(), Toast.LENGTH_SHORT).show();
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "New data on click is !"+ c.getName(), Toast.LENGTH_SHORT).show();
+                editText1= (EditText) v.findViewById(R.id.editText);
+                editText2= (EditText) v.findViewById(R.id.editText2);
+                editText3= (EditText) v.findViewById(R.id.editText3);
+                Toast.makeText(getContext(), "New data on click is !", Toast.LENGTH_SHORT).show();
                 name = editText1.getText().toString();
                 dept = editText2.getText().toString();
                 email = editText3.getText().toString();
                 c.setName(name);
                 c.setdept(dept);
                 c.setEmail(email);
-                Toast.makeText(getContext(), "New name is !"+ c.getName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "New name is !"+name, Toast.LENGTH_SHORT).show();
+            }
+        });
+        /*
+        t1.setText(name.toString());
+        t2.setText(c.getDept());
+        t3.setText(c.getEmail());
+
+        Toast.makeText(getContext(), "New data before click is !"+ t1.getText(), Toast.LENGTH_SHORT).show();*/
+
                 /*currentcontact.setName(name);
                 currentcontact.setdept(dept);
                 currentcontact.setEmail(email);
                 v.getContext().startActivity(new Intent(v.getContext(),ContactActiv   ity.class));*/
-            }
-        });
-        return inflater.inflate(R.layout.fragment_2, container, false);
+           // }
+        //
+        //
+        //
+        //
+        //});
+        return v;
     }
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
-        t1.setText("test");
-        t2.setText("te");
-        t3.setText("r");
+        Bundle bundle=this.getArguments();
+        int pos=bundle.getInt("position");
+        pos++;
+        Toast.makeText(getContext(), "New Position is !"+ pos, Toast.LENGTH_SHORT).show();
+        StudentS s=StudentS.get(getActivity());
+        c= s.getContact(pos);
+        t1= (TextView) getView().findViewById(R.id.textview1);
+        t2= (TextView) getView().findViewById(R.id.textview2);
+        t3= (TextView) getView().findViewById(R.id.textview3);
+        t1.setText("Student name: "+c.getName());
+        t2.setText("Student dept: "+c.getDept());
+        t3.setText("Student email: "+c.getEmail());
+        c.setName("shiva");
+
+
+    }
+    public void save(View v){
+        Toast.makeText(getContext(), "save method !", Toast.LENGTH_SHORT).show();
     }
 }
