@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment2">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height = "match_parent"
+        tools:context = ".MainActivity">
+
+        <TextView android:text = "Change Details" android:layout_width="wrap_content"
+            android:layout_height = "wrap_content"
+            android:id = "@+id/textview"
+            android:textSize = "35dp"
+            android:layout_alignParentTop = "true"
+            android:layout_centerHorizontal = "true" />
+
+        <TextView android:text = "Name" android:layout_width="wrap_content"
+            android:layout_height = "wrap_content"
+            android:id = "@+id/textview1"
+            android:textSize = "25dp"
+            android:layout_below = "@+id/textview"
+             />
+
+        <EditText
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:id = "@+id/editText"
+            android:hint="Enter new name"
+            android:focusable = "true"
+            android:textColorHighlight = "#ff7eff15"
+            android:textColorHint = "#ffff25e6"
+            android:layout_marginTop = "46dp"
+            android:layout_below = "@+id/textview"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_alignParentRight = "true"
+            android:layout_alignParentEnd = "true" />
+
+        <TextView android:text = "Department" android:layout_width="wrap_content"
+            android:layout_height = "wrap_content"
+            android:id = "@+id/textview2"
+            android:textSize = "25dp"
+            android:layout_below = "@+id/editText"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:hint="Enter new dept"
+            android:layout_below="@+id/textview2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/editText"
+            android:layout_alignEnd="@+id/editText"
+            android:textColorHint="#ffff299f"
+             />
+
+        <TextView android:text = "Email" android:layout_width="wrap_content"
+            android:layout_height = "wrap_content"
+            android:id = "@+id/textview3"
+            android:textSize = "25dp"
+            android:layout_below = "@+id/editText2"
+            />
+
+        <EditText
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:id = "@+id/editText3"
+            android:hint="Enter new email"
+            android:focusable = "true"
+            android:textColorHighlight = "#ff7eff15"
+            android:textColorHint = "#ffff25e6"
+            android:layout_below = "@+id/textview3"
+            android:layout_alignParentLeft = "true"
+            android:layout_alignParentStart = "true"
+            android:layout_alignParentRight = "true"
+            android:layout_alignParentEnd = "true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:id="@+id/button"
+            android:layout_below="@+id/editText3"
+            android:layout_centerHorizontal = "true"
+             />
+
+
+
+    </RelativeLayout>
+
+</FrameLayout>
